@@ -4,21 +4,25 @@
 import json
 import logging
 
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
 from telegram.ext import CallbackQueryHandler, CommandHandler, Updater
 
 with open("auth.json") as data_file:
     auth = json.load(data_file)
+with open("links.json") as data_file:
+    data = json.load(data_file)
 
 TOKEN = auth["token"]
 
-logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 def start(update, context):
     keyboard = [
-        [InlineKeyboardButton("Option 1", callback_data="1"), InlineKeyboardButton("Option 2", callback_data="2")],
+        [InlineKeyboardButton("Option 1", callback_data="1"),
+         InlineKeyboardButton("Option 2", callback_data="2")],
         [InlineKeyboardButton("Option 3", callback_data="3")],
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -31,7 +35,8 @@ def button(update, context):
 
 
 def help(update, context):
-    update.message.reply_text("Use /start to start this bot!")
+    message = "\n".join(data["commands"])
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
 
 
 def error(update, context):
