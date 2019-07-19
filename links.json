@@ -38,12 +38,11 @@
             "SnowGem <a href=\"https://github.com/snowgem/insight-api-snowgem\">Explorer API</a>",
             "SnowGem Community: <a href=\"https://www.reddit.com/r/SnowGem/\">Reddit</a> <a href=\"https://t.me/snowgemofficial\">Telegram</a> <a href=\"https://www.facebook.com/snowgemofficial/\">Facebook</a> <a href=\"https://twitter.com/snowgemofficial\">Twitter</a> <a href=\"https://discord.gg/zumGnbg\">Discord</a>"
           ],
-  "roadmap": "• **SnowGem\" Road-map** •\n<https://snowgem.org/blog/snowgem-rdmap-2019>",
-  "por": "• **SnowGem Proof of Review** •\n<https://www.proofofreview.com/wp-content/uploads/2019/02/SNOWGEM_v1.02.pdf>",
-  "members": "Number of members on SnowGem Discord: ",
-  "about": ["• Version 1.3",
-            "• Author: ciripel _(Discord: Amitabha#0517)_",
-            "• Source Code: <https://github.com/ciripel/Heimdall>"
+  "roadmap": "SnowGem <a href=\"https://snowgem.org/blog/snowgem-roadmap-2019\">Roadmap</a>",
+  "por": "SnowGem <a href=\"https://www.proofofreview.com/wp-content/uploads/2019/02/SNOWGEM_v1.02.pdf\">Proof of Review</a>",
+  "about": ["• Version 1.0",
+            "• Author: _@ciripel_",
+            "• [Source Code](https://github.com/ciripel/Heimdall-telegram)"
           ],
   "unknown": "Command not recognized. `!commands` to get a list of my commands or `!help` if you need the list of commands for my little brother Mee6",
   "default": "All the bot calls are allowed only in <#405033839417753640> channel or you can wisper me your secrets...",

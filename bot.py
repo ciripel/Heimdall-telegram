@@ -42,6 +42,21 @@ def links(update, context):
     update.message.reply_text(message, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 
+def roadmap(update, context):
+    message = f"{data['roadmap']}"
+    update.message.reply_text(message, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+
+
+def por(update, context):
+    message = f"{data['por']}"
+    update.message.reply_text(message, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+
+
+def about(update, context):
+    message = "\n".join(data["about"])
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+
 def error(update, context):
     # Log Errors caused by Updates.
     logger.warning(f"Update {update} caused error {context.error}")
@@ -57,6 +72,9 @@ def main():
     dispatcher.add_handler(CallbackQueryHandler(button))
     dispatcher.add_handler(CommandHandler("help", help))
     dispatcher.add_handler(CommandHandler("links", links))
+    dispatcher.add_handler(CommandHandler("roadmap", roadmap))
+    dispatcher.add_handler(CommandHandler("por", por))
+    dispatcher.add_handler(CommandHandler("about", about))
     dispatcher.add_error_handler(error)
 
     # Start the bot
