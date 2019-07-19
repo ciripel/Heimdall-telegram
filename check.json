@@ -1,0 +1,1198 @@
+[
+  {
+    "blocks": [
+      {
+        "height": 819174,
+        "size": 513,
+        "hash": "000000a3c595bdb8c68a7b4942c161d5daf438061503b14ccdda376ea176974a",
+        "time": 1563546585,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819173,
+        "size": 3976,
+        "hash": "000000b2364dc023a39358f65f732a742d0b76e61af553d4f5607bade8254096",
+        "time": 1563546564,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "AltPool",
+          "url": "http://xsg.altpool.pro/"
+        }
+      },
+      {
+        "height": 819172,
+        "size": 2293,
+        "hash": "00000253fbe04aaf69a44b7028e271fba4db3d592e42d0b8429ebc787b4a7fb3",
+        "time": 1563546492,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819171,
+        "size": 1547,
+        "hash": "0000003df7f6464587c77cb4dbd5d4d537bc6e08e0899325f9b03c86d616afc9",
+        "time": 1563546429,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819170,
+        "size": 1953,
+        "hash": "0000019017e7473204bf3328bd831dfe5cb3308981be6bd871be7ce19e949a03",
+        "time": 1563546338,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819169,
+        "size": 961,
+        "hash": "000003811afa960cd677c553a9d8961f725d3439a08bb93424c7fceaddb9995a",
+        "time": 1563546278,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819168,
+        "size": 3270,
+        "hash": "00000301ecd26e3832301b75411257586abb44da9b2a0ef29e0e1e7c37d530a6",
+        "time": 1563546203,
+        "txlength": 5,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819167,
+        "size": 4379,
+        "hash": "0000020ae96e5ba56b028f2e3840f03d8d295b1f62ae1b041f7d3563a005600b",
+        "time": 1563546109,
+        "txlength": 5,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819166,
+        "size": 429,
+        "hash": "000003580938d8a710cca262269c692291b3305c8eb281bc6eda2247d8485d13",
+        "time": 1563546015,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Solopool",
+          "url": "https://sng.solopool.org"
+        }
+      },
+      {
+        "height": 819165,
+        "size": 3213,
+        "hash": "0000021429c9cb17d59283da516eb2fd26a2ea501b44c287a238cae399b70b3f",
+        "time": 1563546013,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819164,
+        "size": 481,
+        "hash": "000001fb38383b4de5c1bf12cce43b636ee8770c0c40d20f8fc8e978c9fc5c76",
+        "time": 1563545981,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "AltPool",
+          "url": "http://xsg.altpool.pro/"
+        }
+      },
+      {
+        "height": 819163,
+        "size": 445,
+        "hash": "000000fa76c90234c0859841764b3efb5d5d1a2d56aabbff9ed0a12b57974d9f",
+        "time": 1563545978,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819162,
+        "size": 513,
+        "hash": "000001db2213b01b515d14203e8d2c0d0f9d4d4688a0b76441fdd912368a7422",
+        "time": 1563545948,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819161,
+        "size": 3750,
+        "hash": "0000007adb5e37f95675f55740ece89466dac5b650310ea456182ea832e0bba5",
+        "time": 1563545946,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819160,
+        "size": 3305,
+        "hash": "000000c84e0f862b6d053be90807852110b51ad4b6a1f99ce20dba93d5b5239f",
+        "time": 1563545850,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819159,
+        "size": 445,
+        "hash": "0000001c854e9ae3bbc0ab732984d2a51912babe27f7ded1009d07f58bb6bd5c",
+        "time": 1563545767,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819158,
+        "size": 2706,
+        "hash": "0000032c1de1ce758b9570b019d0570e516d3b9ea745e08f3e6ebd28b914590c",
+        "time": 1563545758,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819157,
+        "size": 1336,
+        "hash": "00000259d9f278513f6e3cab31e3a4680baed70edbca80836ae32f43cb12fb9b",
+        "time": 1563545641,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819156,
+        "size": 4151,
+        "hash": "000002405cc791f8336a4edc433f591b4c9a7b0fd4c780c8900e3b1b80cff15e",
+        "time": 1563545610,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819155,
+        "size": 2190,
+        "hash": "00000059845076c7274f2dc83594f5176f7cbe1691baa9ed740bc215e09a6dfc",
+        "time": 1563545575,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819154,
+        "size": 461,
+        "hash": "0000044922740452d8b6e888738d9dcc558d36813fc4797a4220048d02fa377c",
+        "time": 1563545557,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819153,
+        "size": 520,
+        "hash": "000003ffd54057135aa69545e7c79997761d6d61a0aa6706b343328d1d1b23e2",
+        "time": 1563545543,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819152,
+        "size": 1024,
+        "hash": "000002cb70561aaf5fe78357dafbef17e37c52b91c8db42305b936073e09ea03",
+        "time": 1563545527,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819151,
+        "size": 520,
+        "hash": "0000030d9b7213c43f36f22c128a53ea581ca4e93b45d72b36afc516471f43c2",
+        "time": 1563545507,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819150,
+        "size": 481,
+        "hash": "00000442b977669bbb0e4c23b619988da8e63a9e1a53026bc1f3c5e70039f373",
+        "time": 1563545505,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "AltPool",
+          "url": "http://xsg.altpool.pro/"
+        }
+      },
+      {
+        "height": 819149,
+        "size": 445,
+        "hash": "000000536e4ec664609e51359733aa3cb392cc0e029ab3ff6e79d07d63d96761",
+        "time": 1563545502,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819148,
+        "size": 13332,
+        "hash": "0000007aa8fb2133b7c246cc21a159a3894523985c9a2ec24262bb7e1afc661c",
+        "time": 1563545478,
+        "txlength": 12,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819147,
+        "size": 956,
+        "hash": "0000036aa5d0fe0693424698aefceb6051a860f490b369c32359a7786eab050a",
+        "time": 1563545056,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819146,
+        "size": 520,
+        "hash": "000002214f22b501d07c792b9af99331a15b893615aabda812d5894743faaf59",
+        "time": 1563545009,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819145,
+        "size": 1611,
+        "hash": "00000379bde575cf8ae4e5a316244fd0200c6cb72f397917a0bd7177afd9c1a3",
+        "time": 1563544996,
+        "txlength": 2,
+        "poolInfo": {}
+      },
+      {
+        "height": 819144,
+        "size": 3069,
+        "hash": "000004087167b70dfbbec4dc2c34159ddf472efb7fe4dc7cffffa4a751939fda",
+        "time": 1563544974,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819143,
+        "size": 792,
+        "hash": "000003eb97f5f53f8dad22ba92ec03319f5fc2102a3e8c4f4734401cc96261ca",
+        "time": 1563544919,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819142,
+        "size": 445,
+        "hash": "000001a0f92ce26c01491fcdb5fc7eaa0c36da7bff46a6508043906efc59852b",
+        "time": 1563544913,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819141,
+        "size": 2303,
+        "hash": "0000028b1d6f8c6c5930ad8a9862315a5bf558add0219f287a810d999e335a16",
+        "time": 1563544886,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819140,
+        "size": 481,
+        "hash": "000004476fd9ee6188beaf4ce185643487e7939cfce86a6d63fb296af6731a56",
+        "time": 1563544800,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "AltPool",
+          "url": "http://xsg.altpool.pro/"
+        }
+      },
+      {
+        "height": 819139,
+        "size": 439,
+        "hash": "00000076a4f83bc588db6b80669b6e2236ecb3ac9136ab51ee11f94a962f7fe2",
+        "time": 1563544794,
+        "txlength": 1,
+        "poolInfo": {}
+      },
+      {
+        "height": 819139,
+        "size": 445,
+        "hash": "0000004badd4263131516318d72df927525e7a9f3e76eb4dbf6972b9dda86d06",
+        "time": 1563544794,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819138,
+        "size": 4548,
+        "hash": "000000c9cf23d32de4a90e2d7e0b87c9ccff21eb3d0ea68c3230f66f458ac80c",
+        "time": 1563544746,
+        "txlength": 5,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819137,
+        "size": 2457,
+        "hash": "000000dfac59cf186ba343612a3ae8853fca1922272f70a412d63aab584a3805",
+        "time": 1563544445,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819136,
+        "size": 461,
+        "hash": "0000037b602ed0b5a65f6c76ec4d2b954e4248cd6c87395734078f2d9a5fedff",
+        "time": 1563544441,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819135,
+        "size": 1461,
+        "hash": "00000182558ff064ee9806b069361893e9fe19bb1d47eb3105a8570ea8f67fdb",
+        "time": 1563544380,
+        "txlength": 3,
+        "poolInfo": {}
+      },
+      {
+        "height": 819134,
+        "size": 1633,
+        "hash": "0000005a6b210ba320e7e84e5b5093ded31f978ce1a8bdb3f0da4d054627487e",
+        "time": 1563544315,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819133,
+        "size": 1971,
+        "hash": "00000145d359f83ba1ece886f9993182b3a3cffc417c51f5f9d8de8927a2db7e",
+        "time": 1563544245,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819132,
+        "size": 690,
+        "hash": "00000160cffbc7dd7f34ef54d678d46653d2387638666006e98cc81f3038917e",
+        "time": 1563544149,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819131,
+        "size": 6411,
+        "hash": "0000000f695dd1a35cc726762df95854567255c2cc612e63ba4775f2a6995fa1",
+        "time": 1563544133,
+        "txlength": 6,
+        "poolInfo": {
+          "poolName": "Equipool Asia",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819130,
+        "size": 445,
+        "hash": "0000030eb443d1e5c1c3318f4f99423546cd2869caeb4eba77e601dac2df1b74",
+        "time": 1563543956,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819129,
+        "size": 2655,
+        "hash": "000002e0c68b3cbaa99fc8f75875384dfbc252d1827efb67f2f23a572d59f07c",
+        "time": 1563543901,
+        "txlength": 5,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819128,
+        "size": 513,
+        "hash": "0000032723ca350a0f426618767cf15c4ea892663fb4698b06b49a8c172a68e9",
+        "time": 1563543728,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819127,
+        "size": 979,
+        "hash": "00000191f752f342539f7a57b3d998eb7dec932f2ca644ddef86b4ac67709bdc",
+        "time": 1563543721,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819126,
+        "size": 445,
+        "hash": "000001fb4dd727448f213961eca92c79ae83bed3bb61d562fff5165b3cc321e9",
+        "time": 1563543691,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819125,
+        "size": 445,
+        "hash": "0000002ce656d57dd8d3c6fc916fa7b41ac5c432809340609d33fc8eed875d14",
+        "time": 1563543665,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819124,
+        "size": 3583,
+        "hash": "0000023aa899f9c8d0fe9f7d512472d973dea13d565d70d68895ec0422d0fa34",
+        "time": 1563543659,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819123,
+        "size": 445,
+        "hash": "000001460ff8f64651dfd59d076d20d33f42017d78d0817780fb19ac4fd49a47",
+        "time": 1563543618,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819122,
+        "size": 445,
+        "hash": "000000a8d7c20b31169e9da4df987640105041a9feef2aaa1557e8befa505265",
+        "time": 1563543590,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819121,
+        "size": 1694,
+        "hash": "00000342cf697e253920d18cb953415565231bd810b6bf232e38b413667e74ee",
+        "time": 1563543548,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Equipool Europe",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819120,
+        "size": 1608,
+        "hash": "000002c7e8882c4322820ad1d55111ea32804cb72eec916948ba986d54d2f712",
+        "time": 1563543534,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819119,
+        "size": 520,
+        "hash": "00000248a5ff471eeb8da08731a1d5b1bfc1cf6e8343aee72367bdaa4e09992b",
+        "time": 1563543501,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819118,
+        "size": 2884,
+        "hash": "0000007db5df22f0b987ee33f05d873257cf21724c849d5145001f79c88e0f64",
+        "time": 1563543476,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Equipool Europe",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819117,
+        "size": 445,
+        "hash": "000000966199ba97a07b96dcdc2bd2c51ece03acac78d235807bf252c4b55ff3",
+        "time": 1563543405,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819116,
+        "size": 901,
+        "hash": "00000062e4a72caefdbff474db6a8d13765bbab9f3a202bec9fd27e212305112",
+        "time": 1563543401,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819115,
+        "size": 956,
+        "hash": "0000028e3c22e7872086e3bb17044c425d27041fa903f2b3dc7455c4b6e5d59e",
+        "time": 1563543397,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819114,
+        "size": 445,
+        "hash": "00000274c0b009e2a3b904b36db1ab36a331f54e938ca3479edee4c46995795f",
+        "time": 1563543356,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819113,
+        "size": 423,
+        "hash": "0000045e9e29abc440a60c6353c87e9a1fe794a0e7e5930d8783b615960f111a",
+        "time": 1563543345,
+        "txlength": 1,
+        "poolInfo": {}
+      },
+      {
+        "height": 819112,
+        "size": 429,
+        "hash": "00000450688095e689d7cb3539ef0f01f38ebf59e71f5349c2268a771f0c76d5",
+        "time": 1563543338,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Solopool",
+          "url": "https://sng.solopool.org"
+        }
+      },
+      {
+        "height": 819111,
+        "size": 461,
+        "hash": "00000020a75b9c578d3af40797068596a3d6da391826005f8c7fffd9c203c523",
+        "time": 1563543313,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819110,
+        "size": 2559,
+        "hash": "00000375508f608e5a81c7b54c74d248e191ea547cc8d6ed497403f57a201adc",
+        "time": 1563543200,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819109,
+        "size": 520,
+        "hash": "00000412aac44513fe04f305c051517641bbcd55bee23ea04b631a45e09426c4",
+        "time": 1563543017,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819108,
+        "size": 1407,
+        "hash": "0000021fe9308a7b585d7daae8f255b28d3ed73db876102a77afa4aea874a2eb",
+        "time": 1563543007,
+        "txlength": 3,
+        "poolInfo": {}
+      },
+      {
+        "height": 819107,
+        "size": 513,
+        "hash": "0000005ab8240cfa9c90d199b709c91ad68981cd973515ededc565b5f53e3cf3",
+        "time": 1563542982,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819106,
+        "size": 3407,
+        "hash": "000004a82c2ffa2703f43c196b248878a6a7e1b6e21339ee4ff68785bd822c44",
+        "time": 1563542929,
+        "txlength": 3,
+        "poolInfo": {}
+      },
+      {
+        "height": 819105,
+        "size": 950,
+        "hash": "000000190b43e78d9ba779ce171b9d7b33e059e58a19dec72601b1923121a8b7",
+        "time": 1563542823,
+        "txlength": 2,
+        "poolInfo": {}
+      },
+      {
+        "height": 819104,
+        "size": 3001,
+        "hash": "000003ba925bc02c585ebf2f266423c63af3d981ace50068e292b4c97d02ca8f",
+        "time": 1563542703,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819103,
+        "size": 1071,
+        "hash": "000000b2802679e22aba8b83d161dd56b8c51f0bf6f605ae6370067e5c0e5943",
+        "time": 1563542466,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819102,
+        "size": 520,
+        "hash": "000000722aea6f45b086359cf955c67bd87a84253e4ce6d79248d046c31bf443",
+        "time": 1563542359,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819101,
+        "size": 8672,
+        "hash": "0000015af134e3b8d064016374cf44f2cf37c13ebdf71332ce112f89d923e2b1",
+        "time": 1563542342,
+        "txlength": 8,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819100,
+        "size": 1042,
+        "hash": "000000268cf53a747c446a392d3f1417aa836ff6b478e4ff7f8b6ab5fdcb6b6e",
+        "time": 1563542203,
+        "txlength": 2,
+        "poolInfo": {}
+      },
+      {
+        "height": 819099,
+        "size": 423,
+        "hash": "000001e68a6bc43e7b4427437302edaae10767418c7894f3aa7912a1c86aa08c",
+        "time": 1563542179,
+        "txlength": 1,
+        "poolInfo": {}
+      },
+      {
+        "height": 819098,
+        "size": 520,
+        "hash": "0000012ae622063bc86dc7132d15663bf6a28dc39dcda3dea87a13445c106aa9",
+        "time": 1563542177,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819097,
+        "size": 445,
+        "hash": "0000000a50039995ee1e4b4b468b0d224959bb40020e86c27e4e3444d8644d44",
+        "time": 1563542157,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819096,
+        "size": 3418,
+        "hash": "000003f9c0b50f09d422a671c5f0d7bf18a3ee08daa8827797d032c4bd2e7f6b",
+        "time": 1563542106,
+        "txlength": 4,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819095,
+        "size": 17349,
+        "hash": "000003351ce3567eaad2252e6f27f9ca4d2b0e5f80cae3eb65c29e6e39321f3f",
+        "time": 1563542045,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819094,
+        "size": 1404,
+        "hash": "0000023be8fcef6486c4c0519e146cf912aaea884a60c1a97a0817051a430dc1",
+        "time": 1563541987,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819093,
+        "size": 481,
+        "hash": "0000017b23f577c8045e54707d987fcd07bff1db306e6d523e1156476a5d209d",
+        "time": 1563541933,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "AltPool",
+          "url": "http://xsg.altpool.pro/"
+        }
+      },
+      {
+        "height": 819092,
+        "size": 423,
+        "hash": "0000039e872f7501af23a16ca9736bfed41a167ee9e516f0f4087c46902592f3",
+        "time": 1563541895,
+        "txlength": 1,
+        "poolInfo": {}
+      },
+      {
+        "height": 819091,
+        "size": 445,
+        "hash": "00000255b4b8bd4bec05d7ef4fc0fb56503fab1cd7139e76e92030487e418527",
+        "time": 1563541881,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819090,
+        "size": 520,
+        "hash": "000004321e837d33af08481a84182b9546c61cdbed0ca757c5bb150df1fcc0ea",
+        "time": 1563541855,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819089,
+        "size": 520,
+        "hash": "0000029e74345cf19074952df61acde13906ec4564be5c9c6570bd46b451eec4",
+        "time": 1563541822,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819088,
+        "size": 520,
+        "hash": "0000045fae3f0be72a75cc1e1239a8bd264e5727db9267b0ba595436d24e9b4d",
+        "time": 1563541792,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819087,
+        "size": 3787,
+        "hash": "0000016b01ba5e4456ede9b1581c81fa32e0f85b144733fcdf3bf80268ba2df4",
+        "time": 1563541789,
+        "txlength": 5,
+        "poolInfo": {}
+      },
+      {
+        "height": 819086,
+        "size": 705,
+        "hash": "00000463b9d9ec919bb676929c6fd61e99070c437fc6694692858eb833648390",
+        "time": 1563541615,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819085,
+        "size": 520,
+        "hash": "000004cf4a0c1791a925b511c3621e3b36b819e3622f9c6ad6bfbdf388cb0dee",
+        "time": 1563541595,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819084,
+        "size": 461,
+        "hash": "0000045b5aefa6d05bc72cbdf1b1fb9aa6c25fd67087545385da7acb5dff54bd",
+        "time": 1563541592,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819083,
+        "size": 2348,
+        "hash": "00000115335ccd066fc8ace64a31587914ab757ec3b760f5681436e46d33afd5",
+        "time": 1563541537,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819082,
+        "size": 1526,
+        "hash": "0000001df09350089186b25b9f9a68855fa6d7de0692ae3675ab94624ff1991f",
+        "time": 1563541321,
+        "txlength": 3,
+        "poolInfo": {}
+      },
+      {
+        "height": 819081,
+        "size": 445,
+        "hash": "000004acef022568ac8ca5c90ef0c60852e561ad157df90dcd5ef8c4f97b3ec2",
+        "time": 1563541303,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      },
+      {
+        "height": 819080,
+        "size": 5699,
+        "hash": "000002a0392142d5adfacf8f0123931bd997db6005ddad9b19647c85a7ba3641",
+        "time": 1563541285,
+        "txlength": 3,
+        "poolInfo": {
+          "poolName": "Equipool North America",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819079,
+        "size": 1031,
+        "hash": "000000fc16f6e31769ce27a1c6b770f0c201fe089e81d046293c234590f40a3c",
+        "time": 1563541243,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819078,
+        "size": 504,
+        "hash": "0000011c1b8bd2ca93b7c1cf92dfd4cc05dd56e034ff05d8fc823dea3a2e7edc",
+        "time": 1563541176,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Equipool Asia",
+          "url": "https://equipool.1ds.us/getting_started"
+        }
+      },
+      {
+        "height": 819077,
+        "size": 5675,
+        "hash": "000004a494ecb4674c31d2dccedf68a6b4321874c0b0f5d0211028e434fc4ac6",
+        "time": 1563541154,
+        "txlength": 7,
+        "poolInfo": {
+          "poolName": "EquiHub",
+          "url": "https://snowgem.equihub.pro/"
+        }
+      },
+      {
+        "height": 819076,
+        "size": 1648,
+        "hash": "000000c867d9fe52dcb475d06b24d48734ee19fd0767ec7e6715e62c95d46da7",
+        "time": 1563541032,
+        "txlength": 2,
+        "poolInfo": {
+          "poolName": "Abacuspool",
+          "url": "https://www.abakusmine.eu/xsg_miner.php"
+        }
+      },
+      {
+        "height": 819075,
+        "size": 445,
+        "hash": "000003792f8729de2ff431d04a4e9cd62aea35799b2d8c90d37f54ce131406ec",
+        "time": 1563540983,
+        "txlength": 1,
+        "poolInfo": {
+          "poolName": "Zergpool",
+          "url": "http://zergpool.com/"
+        }
+      }
+    ],
+    "length": 101,
+    "pagination": {
+      "next": "2019-07-20",
+      "prev": "2019-07-18",
+      "currentTs": 1563580799,
+      "current": "2019-07-19",
+      "isToday": true,
+      "more": true,
+      "moreTs": 1563580800
+    }
+  },
+  [
+    {
+      "code": "USD",
+      "symbol": "$",
+      "name": "US Dollar",
+      "rate": 1,
+      "price": 1
+    },
+    {
+      "code": "EUR",
+      "symbol": "\u20ac",
+      "name": "Euro",
+      "rate": 0.889,
+      "price": 1.125
+    },
+    {
+      "code": "RUB",
+      "symbol": "\u20bd",
+      "name": "Russian Rouble",
+      "rate": 62.928,
+      "price": 0.016
+    },
+    {
+      "code": "GBP",
+      "symbol": "\u00a3",
+      "name": "U.K. Pound Sterling",
+      "rate": 0.799,
+      "price": 1.252
+    },
+    {
+      "code": "BTC",
+      "symbol": "\u0e3f",
+      "name": "Bitcoin",
+      "rate": 1,
+      "price": 10374.33,
+      "pricechange": 5.71,
+      "marketcap": 184930402557,
+      "volume24h": 24764053325,
+      "circulating": 17825762
+    },
+    {
+      "code": "XSG",
+      "name": "SnowGem",
+      "rate": 190204.61,
+      "price": 0.055,
+      "pricechange": 2.42,
+      "marketcap": 619407,
+      "volume24h": 242091,
+      "circulating": 11356232
+    },
+    {
+      "code": "BCH",
+      "name": "Bitcoin Cash",
+      "rate": 34.24,
+      "price": 302.97,
+      "pricechange": 1.71,
+      "marketcap": 5423170417,
+      "volume24h": 1717515480,
+      "circulating": 17900063
+    },
+    {
+      "code": "ZEC",
+      "name": "Zcash",
+      "rate": 141.07,
+      "price": 73.54,
+      "pricechange": -3.4,
+      "marketcap": 515038747,
+      "volume24h": 357934532,
+      "circulating": 7003431
+    },
+    {
+      "code": "DASH",
+      "name": "Dash",
+      "rate": 93.1,
+      "price": 111.43,
+      "pricechange": 6.05,
+      "marketcap": 995065429,
+      "volume24h": 189602490,
+      "circulating": 8929934
+    },
+    {
+      "code": "ZEN",
+      "name": "Horizen",
+      "rate": 1746.52,
+      "price": 5.94,
+      "pricechange": -3.71,
+      "marketcap": 41077771,
+      "volume24h": 1838330,
+      "circulating": 6917825
+    }
+  ],
+  {
+    "info": {
+      "version": 3000454,
+      "protocolversion": 170008,
+      "blocks": 819174,
+      "timeoffset": 0,
+      "connections": 100,
+      "proxy": "",
+      "difficulty": 511.6340501122627,
+      "testnet": false,
+      "relayfee": 1e-06,
+      "errors": "",
+      "networksolps": 63959,
+      "network": "livenet"
+    }
+  }
+]

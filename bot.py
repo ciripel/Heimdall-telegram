@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 # Works with Python 3.7
 
+import asyncio
 import json
 import logging
 
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
-from telegram.ext import CallbackQueryHandler, CommandHandler, Updater
+import aiohttp
+from telegram import ParseMode
+from telegram.ext import CommandHandler, Updater
 
 with open("auth.json") as data_file:
     auth = json.load(data_file)
 with open("links.json") as data_file:
     data = json.load(data_file)
+with open("params.json") as data_file:
+    params = json.load(data_file)
 
 TOKEN = auth["token"]
 
@@ -18,18 +22,29 @@ logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
-def start(update, context):
-    keyboard = [
-        [InlineKeyboardButton("Option 1", callback_data="1"), InlineKeyboardButton("Option 2", callback_data="2")],
-        [InlineKeyboardButton("Option 3", callback_data="3")],
-    ]
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    update.message.reply_text("Please choose:", reply_markup=reply_markup)
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
 
 
-def button(update, context):
-    query = update.callback_query
-    query.edit_message_text(text=f"Selected option: {query.data}")
+async def fetch(session, url):
+    async with session.get(url) as response:
+        return await response.json(content_type=None)
+
+
+async def fetch_all(urls, loop):
+    async with aiohttp.ClientSession(loop=loop, connector=aiohttp.TCPConnector(ssl=False)) as session:
+        results = await asyncio.gather(*[fetch(session, url) for url in urls], return_exceptions=True)
+        return results
+
+
+def url_fetch(url_list):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    return loop.run_until_complete(fetch_all(url_list, loop))
 
 
 def help(update, context):
@@ -57,6 +72,49 @@ def about(update, context):
     update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 
+def calc(update, context):
+    if len(context.args) < 1:
+        message = f"{data['hpow']['default']}"
+        update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+        return
+    cmd = context.args[0].lower()
+    if cmd == "infinity" or cmd == "infinite" or cmd == "inf":
+        message = f"{data['hpow']['infinity']}"
+    elif not is_number(cmd):
+        message = f"{data['hpow']['default']}"
+    elif cmd == "0":
+        message = f"{data['hpow']['zero']}"
+    elif is_number(cmd) and float(cmd) < 0:
+        message = f"{data['hpow']['neg']}"
+    elif is_number(cmd):
+        htmls = url_fetch([data["blocks_info"], data["rates"], data["net_hash"]])
+
+        now = htmls[0]["blocks"][0]["time"]
+        if len(htmls[0]["blocks"]) > 1:
+            max_blocks = len(htmls[0]["blocks"]) - 1
+            before = htmls[0]["blocks"][max_blocks]["time"]
+            avg_bt = (now - before) / max_blocks
+        else:
+            avg_bt = 60
+
+        for i in range(len(htmls[1])):
+            if htmls[1][i]["code"] == "XSG":
+                xsg_usd_price = float(htmls[1][i]["price"])
+
+        hashrate = htmls[2]["info"]["networksolps"]
+        mnr_rwd = float(params["mnr_rwd"])
+        cmd = float(cmd)
+        message = (
+            f"Current network hashrate is *{int(hashrate)/1000:1.2f} KSols/s*.\nA hashrate of *{cmd:1.0f}"
+            + f" Sols/s* will get you approximately *{cmd/hashrate*3600*mnr_rwd/avg_bt:1.2f} XSG* _("
+            + f"{cmd/hashrate*3600*mnr_rwd/avg_bt*xsg_usd_price:1.2f}$)_ per *hour* and *"
+            + f"{cmd/hashrate*3600*mnr_rwd*24/avg_bt:1.2f} XSG* _("
+            + f"{cmd/hashrate*3600*mnr_rwd*24/avg_bt*xsg_usd_price:1.2f}$)_ per *day* at current "
+            + "network difficulty."
+        )
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+
 def error(update, context):
     # Log Errors caused by Updates.
     logger.warning(f"Update {update} caused error {context.error}")
@@ -68,13 +126,13 @@ def main():
     # Post version 12 this will no longer be necessary
     updater = Updater(token=TOKEN, use_context=True)
     dispatcher = updater.dispatcher
-    dispatcher.add_handler(CommandHandler("start", start))
-    dispatcher.add_handler(CallbackQueryHandler(button))
+
     dispatcher.add_handler(CommandHandler("help", help))
     dispatcher.add_handler(CommandHandler("links", links))
     dispatcher.add_handler(CommandHandler("roadmap", roadmap))
     dispatcher.add_handler(CommandHandler("por", por))
     dispatcher.add_handler(CommandHandler("about", about))
+    dispatcher.add_handler(CommandHandler("calc", calc, pass_args=True))
     dispatcher.add_error_handler(error)
 
     # Start the bot
