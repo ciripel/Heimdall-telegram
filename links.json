@@ -45,8 +45,8 @@
             "• [Source Code](https://github.com/ciripel/Heimdall-telegram)"
           ],
   "blocks_info": "https://explorer.snowgem.org/api/blocks?limit=101",
+  "net_status": "https://explorer.snowgem.org/api/status",
   "rates": "https://rates.snowgem.org/rates/",
-  "net_hash": "https://explorer.snowgem.org/api/status",
   "hpow": {"default": "Input your hashpower in Sols/s, like `/calc 123`.",
            "infinity": "“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.” ",
            "zero": "And you call yourself a miner?! Ha 😂 Even my grandma's processor can mine more than this!",
@@ -54,7 +54,6 @@
          },
 
 
-  "difficulty": "https://explorer.snowgem.org/api/status?q=getDifficulty",
   "asgard_managed": "https://asgard.snowgem.org/php/public-api?action=getManagedNodesCount",
   "masternodes": {"link": "https://data.snowgem.org/masternode.html",
                   "asgard": "• Monitoring & management tool • <https://asgard.snowgem.org/>",

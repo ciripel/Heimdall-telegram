@@ -75,6 +75,36 @@ def about(update, context):
     update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 
+def net_stats(update, context):
+    url_list = [data["blocks_info"], data["net_status"]]
+    htmls = url_fetch(url_list)
+    for i in range(len(htmls)):
+        if htmls[i] is None:
+            message = f"There was an error with {url_list[i]} api."
+            update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+            logger.warning(f"There was an error with {url_list[i]} api.")
+            return
+
+    now = htmls[0]["blocks"][0]["time"]
+    if len(htmls[0]["blocks"]) > 1:
+        max_blocks = len(htmls[0]["blocks"]) - 1
+        before = htmls[0]["blocks"][max_blocks]["time"]
+        avg_bt = (now - before) / max_blocks
+    else:
+        avg_bt = 60
+    last_block = htmls[0]["blocks"][0]["height"]
+
+    version = params["daemon_ver"]
+    diff = htmls[1]["info"]["difficulty"]
+    hashrate = htmls[1]["info"]["networksolps"]
+
+    message = (
+        f"• Version • *{version}*\n• Block Height • *{last_block:,}*\n• Avg Block Time • *{round(avg_bt, 2)}"
+        + f" s*\n• Network Hashrate • *{int(hashrate)/1000} kSol/s*\n• Network Difficulty • *{diff:1.3f}*"
+    )
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+
 def calc(update, context):
     if len(context.args) < 1:
         message = f"{data['hpow']['default']}"
@@ -90,14 +120,15 @@ def calc(update, context):
     elif is_number(cmd) and float(cmd) < 0:
         message = f"{data['hpow']['neg']}"
     elif is_number(cmd):
-        url_list = [data["blocks_info"], data["rates"], data["net_hash"]]
+        url_list = [data["blocks_info"], data["rates"], data["net_status"]]
         htmls = url_fetch(url_list)
-
         for i in range(len(htmls)):
             if htmls[i] is None:
                 message = f"There was an error with {url_list[i]} api."
                 update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+                logger.warning(f"There was an error with {url_list[i]} api.")
                 return
+
         now = htmls[0]["blocks"][0]["time"]
         if len(htmls[0]["blocks"]) > 1:
             max_blocks = len(htmls[0]["blocks"]) - 1
@@ -141,6 +172,7 @@ def main():
     dispatcher.add_handler(CommandHandler("roadmap", roadmap))
     dispatcher.add_handler(CommandHandler("por", por))
     dispatcher.add_handler(CommandHandler("about", about))
+    dispatcher.add_handler(CommandHandler("net", net_stats))
     dispatcher.add_handler(CommandHandler("calc", calc, pass_args=True))
     dispatcher.add_error_handler(error)
 
