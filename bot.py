@@ -31,8 +31,11 @@ def is_number(s):
 
 
 async def fetch(session, url):
-    async with session.get(url) as response:
-        return await response.json(content_type=None)
+    try:
+        async with session.get(url) as response:
+            return await response.json(content_type=None)
+    except Exception:
+        return None
 
 
 async def fetch_all(urls, loop):
@@ -87,8 +90,14 @@ def calc(update, context):
     elif is_number(cmd) and float(cmd) < 0:
         message = f"{data['hpow']['neg']}"
     elif is_number(cmd):
-        htmls = url_fetch([data["blocks_info"], data["rates"], data["net_hash"]])
+        url_list = [data["blocks_info"], data["rates"], data["net_hash"]]
+        htmls = url_fetch(url_list)
 
+        for i in range(len(htmls)):
+            if htmls[i] is None:
+                message = f"There was an error with {url_list[i]} api."
+                update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+                return
         now = htmls[0]["blocks"][0]["time"]
         if len(htmls[0]["blocks"]) > 1:
             max_blocks = len(htmls[0]["blocks"]) - 1
