@@ -81,7 +81,7 @@ def net_stats(update, context):
     for i in range(len(htmls)):
         if htmls[i] is None:
             message = f"There was an error with {url_list[i]} api."
-            update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+            update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
             logger.warning(f"There was an error with {url_list[i]} api.")
             return
 
@@ -93,7 +93,6 @@ def net_stats(update, context):
     else:
         avg_bt = 60
     last_block = htmls[0]["blocks"][0]["height"]
-
     version = params["daemon_ver"]
     diff = htmls[1]["info"]["difficulty"]
     hashrate = htmls[1]["info"]["networksolps"]
@@ -103,6 +102,31 @@ def net_stats(update, context):
         + f" s*\n• Network Hashrate • *{int(hashrate)/1000} kSol/s*\n• Network Difficulty • *{diff:1.3f}*"
     )
     update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+
+def halving(update, context):
+    url_list = [data["blocks_info"]]
+    htmls = url_fetch(url_list)
+    if htmls[0] is None:
+        message = f"There was an error with {url_list[0]} api."
+        update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
+        logger.warning(f"There was an error with {url_list[0]} api.")
+        return
+
+    now = htmls[0]["blocks"][0]["time"]
+    if len(htmls[0]["blocks"]) > 1:
+        max_blocks = len(htmls[0]["blocks"]) - 1
+        before = htmls[0]["blocks"][max_blocks]["time"]
+        avg_bt = (now - before) / max_blocks
+    else:
+        avg_bt = 60
+    last_block = htmls[0]["blocks"][0]["height"]
+    halving_time = (2102400 - last_block) * avg_bt / 86400
+    message = (
+        f"The next halving will be in approximately *{halving_time:1.2f}* days (*{halving_time/365:1.3f}"
+        + "* years).\nThe block reward after the halving will be *10* XSG."
+    )
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
 
 
 def calc(update, context):
@@ -125,7 +149,7 @@ def calc(update, context):
         for i in range(len(htmls)):
             if htmls[i] is None:
                 message = f"There was an error with {url_list[i]} api."
-                update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+                update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
                 logger.warning(f"There was an error with {url_list[i]} api.")
                 return
 
@@ -136,14 +160,13 @@ def calc(update, context):
             avg_bt = (now - before) / max_blocks
         else:
             avg_bt = 60
-
         for i in range(len(htmls[1])):
             if htmls[1][i]["code"] == "XSG":
                 xsg_usd_price = float(htmls[1][i]["price"])
-
         hashrate = htmls[2]["info"]["networksolps"]
         mnr_rwd = float(params["mnr_rwd"])
         cmd = float(cmd)
+
         message = (
             f"Current network hashrate is *{int(hashrate)/1000:1.2f} KSols/s*.\nA hashrate of *{cmd:1.0f}"
             + f" Sols/s* will get you approximately *{cmd/hashrate*3600*mnr_rwd/avg_bt:1.2f} XSG* _("
@@ -173,6 +196,7 @@ def main():
     dispatcher.add_handler(CommandHandler("por", por))
     dispatcher.add_handler(CommandHandler("about", about))
     dispatcher.add_handler(CommandHandler("net", net_stats))
+    dispatcher.add_handler(CommandHandler("halving", halving))
     dispatcher.add_handler(CommandHandler("calc", calc, pass_args=True))
     dispatcher.add_error_handler(error)
 
