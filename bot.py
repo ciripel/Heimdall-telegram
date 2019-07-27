@@ -178,6 +178,45 @@ def calc(update, context):
     update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 
+def mninfo(update, context):
+    url_list = [data["blocks_info"], data["masternodes"]["link"], data["masternodes"]["asgard_managed"]]
+    htmls = url_fetch(url_list)
+    for i in range(len(htmls) - 1):
+        if htmls[i] is None:
+            message = f"There was an error with {url_list[i]} api."
+            update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
+            logger.warning(f"There was an error with {url_list[i]} api.")
+            return
+    if htmls[2] is None:
+        htmls[2] = 0
+        logger.warning(f"There was an error with {data['masternodes']['asgard_managed']} api.")
+
+    now = htmls[0]["blocks"][0]["time"]
+    if len(htmls[0]["blocks"]) > 1:
+        max_blocks = len(htmls[0]["blocks"]) - 1
+        before = htmls[0]["blocks"][max_blocks]["time"]
+        avg_bt = (now - before) / max_blocks
+    else:
+        avg_bt = 60
+    mn_count_s = json.dumps(htmls[1])
+    mn_count = mn_count_s.count("ENABLED")
+    asgard_managed = htmls[2]
+    mn_rwd = float(params["mn_rwd"])
+    guide_link = data["masternodes"]["guide_link"]
+    asgard = data["masternodes"]["asgard"]
+    asgard_vid = data["masternodes"]["asgard_vid"]
+    mn_roi = mn_rwd * 3153600 / avg_bt / mn_count / 10
+    time_first_payment = 2.6 * mn_count / 60
+    message = (
+        f"• Active masternodes • <b>{mn_count: 1.0f}</b> (<b>{asgard_managed}</b><i> managed by </i><b>Asgard</b>)"
+        + f"\n• Coins Locked • <b>{mn_count*10000:,} XSG</b>\n• ROI "
+        + f"• <b>{mn_roi: 1.3f} % </b>\n• Minimum time before first payment • <b>{time_first_payment: 1.2f} hours</b>"
+        + f"\n• One masternode will give you approximately <b>{3600*24/avg_bt*mn_rwd/mn_count:1.3f} XSG</b> per"
+        + f" <b>day</b>\n{asgard}{asgard_vid}{guide_link}"
+    )
+    update.message.reply_text(message, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+
+
 def error(update, context):
     # Log Errors caused by Updates.
     logger.warning(f"Update {update} caused error {context.error}")
@@ -198,6 +237,7 @@ def main():
     dispatcher.add_handler(CommandHandler("net", net_stats))
     dispatcher.add_handler(CommandHandler("halving", halving))
     dispatcher.add_handler(CommandHandler("calc", calc, pass_args=True))
+    dispatcher.add_handler(CommandHandler("mn", mninfo))
     dispatcher.add_error_handler(error)
 
     # Start the bot
