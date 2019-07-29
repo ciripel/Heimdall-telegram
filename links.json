@@ -52,14 +52,17 @@
            "zero": "And you call yourself a miner?! Ha 😂 Even my grandma's processor can mine more than this!",
            "neg": "You deffinatly have reached something umbelievable! Nobody have *unmined* anything till now! Do not forget to register the tech! 🤣"
          },
-
-
   "masternodes": {"link": "https://data.snowgem.org/masternode.html",
                   "asgard_managed": "https://asgard.snowgem.org/php/public-api?action=getManagedNodesCount",
                   "asgard": "• <a href=\"https://asgard.snowgem.org/\">Monitoring & management tool</a> •",
                   "asgard_vid": " <a href=\"https://www.youtube.com/watch?v=X8jIZv9JtvU\">Asgard Install Guide</a> •",
                   "guide_link": " <a href=\"https://snowgem.org/resources/masternode-setup/masternode-windows-linux\">Classic Install Guide</a> •"
-            },
+                },
+  "mnrewards": {"default": "Input the the number of nodes, like `!mnrewards 1`.",
+                "zero": "Wow, You did it friend! You have reached the unmeasurable valor of zero masternodes!",
+                "neg": "Are you in debt my friend?! How have you arrived in this position in the crypto world?! How can you be in debt in a world without banks?! :thinking:"
+              },
+
   "cmc": {"cmc_btc": "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC",
           "cmc_eth": "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=ETH",
           "cmc_xsg": "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=XSG"
@@ -68,10 +71,6 @@
              "zero": "Welcome young one! We have all started with **0 XSG** zilions of aeons ago!",
              "neg": "Hmm! Yup! I feel sorry for you! You owe **XSG**... I feel your pain friend!"
           },
-  "mnrewards": {"default": "Input the the number of nodes, like `!mnrewards 1`.",
-                "zero": "Wow, You did it friend! You have reached the unmeasurable valor of zero masternodes!",
-                "neg": "Are you in debt my friend?! How have you arrived in this position in the crypto world?! How can you be in debt in a world without banks?! :thinking:"
-              },
   "no_role": "The guild do not have `Player` role. Please create it before using this command.",
   "whenmoon": ["Jan. 21 Wolf Moon U.S. East:12:16 a.m. UTC:04:16",
                "Feb. 19 Snow Moon U.S. East:12:10:53 a.m. UTC:15:53",

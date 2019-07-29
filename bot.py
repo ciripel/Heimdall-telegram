@@ -217,6 +217,65 @@ def mninfo(update, context):
     update.message.reply_text(message, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 
+def mnrew(update, context):
+    url_list = [data["blocks_info"], data["rates"], data["masternodes"]["link"]]
+    htmls = url_fetch(url_list)
+    for i in range(len(htmls)):
+        if htmls[i] is None:
+            message = f"There was an error with {url_list[i]} api."
+            update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
+            logger.warning(f"There was an error with {url_list[i]} api.")
+            return
+    now = htmls[0]["blocks"][0]["time"]
+    if len(htmls[0]["blocks"]) > 1:
+        max_blocks = len(htmls[0]["blocks"]) - 1
+        before = htmls[0]["blocks"][max_blocks]["time"]
+        avg_bt = (now - before) / max_blocks
+    else:
+        avg_bt = 60
+    for i in range(len(htmls[1])):
+        if htmls[1][i]["code"] == "XSG":
+            xsg_usd_price = float(htmls[1][i]["price"])
+    mn_count_s = json.dumps(htmls[2])
+    mn_count = mn_count_s.count("ENABLED")
+    mn_rwd = float(params["mn_rwd"])
+    if len(context.args) < 1:
+        message = (
+            f"*1* Masternode will give you approximately:"
+            + f"\n*{3600*24/avg_bt*mn_rwd/mn_count:1.3f} XSG* _("
+            + f"{3600*24/avg_bt*mn_rwd/mn_count*xsg_usd_price:1.3f}$)_ per *day*"
+            + f"\n*{3600*24*7/avg_bt*mn_rwd/mn_count:1.3f} XSG* _("
+            + f"{3600*24*7/avg_bt*mn_rwd/mn_count*xsg_usd_price:1.3f}$)_ per *week*"
+            + f"\n*{3600*24*30/avg_bt*mn_rwd/mn_count:1.3f} XSG* _("
+            + f"{3600*24*30/avg_bt*mn_rwd/mn_count*xsg_usd_price:1.3f}$)_ per *month*"
+            + f"\n*{3600*24*365/avg_bt*mn_rwd/mn_count:1.3f} XSG* _("
+            + f"{3600*24*365/avg_bt*mn_rwd/mn_count*xsg_usd_price:1.3f}$)_ per *year*"
+        )
+        update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+        return
+    cmd = context.args[0].lower()
+    if not is_number(cmd):
+        message = f"{data['mnrewards']['default']}"
+    elif cmd == "0":
+        message = f"{data['mnrewards']['zero']}"
+    elif is_number(cmd) and float(cmd) < 0:
+        message = f"{data['mnrewards']['neg']}"
+    elif is_number(cmd):
+        cmd = float(cmd)
+        message = (
+            f"*{cmd:1.0f}* Masternode will give you approximately:"
+            + f"\n*{cmd*3600*24/avg_bt*mn_rwd/mn_count:1.3f} XSG* _("
+            + f"{cmd*3600*24/avg_bt*mn_rwd/mn_count*xsg_usd_price:1.3f}$)_ per *day*"
+            + f"\n*{cmd*3600*24*7/avg_bt*mn_rwd/mn_count:1.3f} XSG* _("
+            + f"{cmd*3600*24*7/avg_bt*mn_rwd/mn_count*xsg_usd_price:1.3f}$)_ per *week*"
+            + f"\n*{cmd*3600*24*30/avg_bt*mn_rwd/mn_count:1.3f} XSG* _("
+            + f"{cmd*3600*24*30/avg_bt*mn_rwd/mn_count*xsg_usd_price:1.3f}$)_ per *month*"
+            + f"\n*{cmd*3600*24*365/avg_bt*mn_rwd/mn_count:1.3f} XSG* _("
+            + f"{cmd*3600*24*365/avg_bt*mn_rwd/mn_count*xsg_usd_price:1.3f}$)_ per *year*"
+        )
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+
 def error(update, context):
     # Log Errors caused by Updates.
     logger.warning(f"Update {update} caused error {context.error}")
@@ -238,6 +297,7 @@ def main():
     dispatcher.add_handler(CommandHandler("halving", halving))
     dispatcher.add_handler(CommandHandler("calc", calc, pass_args=True))
     dispatcher.add_handler(CommandHandler("mn", mninfo))
+    dispatcher.add_handler(CommandHandler("mnrew", mnrew, pass_args=True))
     dispatcher.add_error_handler(error)
 
     # Start the bot
