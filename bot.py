@@ -38,6 +38,17 @@ async def fetch(session, url):
         return None
 
 
+def calculate_supply(block_height):
+    if block_height < 8_000:
+        return 80_000
+
+    epochs, remainder = divmod(block_height - 1, 2102400)
+    previous_epochs_total_reward = sum(2102400 * (20 / (2 ** epoch)) for epoch in range(epochs))
+    current_epoch_reward = 20 / (2 ** epochs)
+    current_total_reward = (remainder + 1) * current_epoch_reward
+    return previous_epochs_total_reward + current_total_reward - 79_980
+
+
 async def fetch_all(urls, loop):
     async with aiohttp.ClientSession(loop=loop, connector=aiohttp.TCPConnector(ssl=False)) as session:
         results = await asyncio.gather(*[fetch(session, url) for url in urls], return_exceptions=True)
@@ -276,6 +287,46 @@ def mnrew(update, context):
     update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 
+def coin_info(update, context):
+    url_list = [data["masternodes"]["link"], data["rates"], data["blocks_info"]]
+    htmls = url_fetch(url_list)
+    for i in range(len(htmls)):
+        if htmls[i] is None:
+            message = f"There was an error with {url_list[i]} api."
+            update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
+            logger.warning(f"There was an error with {url_list[i]} api.")
+            return
+    mn_count_s = json.dumps(htmls[0])
+    mn_count = mn_count_s.count("ENABLED")
+    for i in range(len(htmls[1])):
+        if htmls[1][i]["code"] == "XSG":
+            xsg_usd_price = float(htmls[1][i]["price"])
+            xsg_24vol = float(htmls[1][i]["volume24h"])
+            xsg_24change = float(htmls[1][i]["pricechange"])
+        if htmls[1][i]["code"] == "BTC":
+            btc_usd_price = float(htmls[1][i]["price"])
+    last_block = htmls[2]["blocks"][0]["height"]
+    xsg_circ_supply = calculate_supply(last_block)
+    xsg_mcap = xsg_circ_supply * xsg_usd_price
+    message = (
+        f"• Current Price • *{xsg_usd_price/btc_usd_price:1.8f} BTC* | *{xsg_usd_price:1.4f}$*\n• 24h Volume •"
+        + f" *{xsg_24vol/btc_usd_price:1.3f} BTC* | *{xsg_24vol:1,.2f}$*\n• Market Cap • *{xsg_mcap:1,.0f}$*"
+        + f"\n• Circulating Supply • *{xsg_circ_supply:1,.0f} XSG*\n• Locked Coins • *"
+        + f"{mn_count*10000:,} XSG*\n• 24h Change • *{xsg_24change:1.2f} %*"
+    )
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+
+def xsg_usd(update, context):
+    message = "bubu"
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+
+def market_info(update, context):
+    message = "bul"
+    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+
 def error(update, context):
     # Log Errors caused by Updates.
     logger.warning(f"Update {update} caused error {context.error}")
@@ -298,6 +349,9 @@ def main():
     dispatcher.add_handler(CommandHandler("calc", calc, pass_args=True))
     dispatcher.add_handler(CommandHandler("mn", mninfo))
     dispatcher.add_handler(CommandHandler("mnrew", mnrew, pass_args=True))
+    dispatcher.add_handler(CommandHandler("coin", coin_info))
+    dispatcher.add_handler(CommandHandler("xsgusd", xsg_usd, pass_args=True))
+    dispatcher.add_handler(CommandHandler("market", market_info, pass_args=True))
     dispatcher.add_error_handler(error)
 
     # Start the bot
