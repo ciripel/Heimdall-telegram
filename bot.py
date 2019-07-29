@@ -318,7 +318,33 @@ def coin_info(update, context):
 
 
 def xsg_usd(update, context):
-    message = "bubu"
+    url_list = [data["rates"]]
+    htmls = url_fetch(url_list)
+    if htmls[0] is None:
+        message = f"There was an error with {url_list[0]} api."
+        update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
+        logger.warning(f"There was an error with {url_list[0]} api.")
+        return
+    for i in range(len(htmls[0])):
+        if htmls[0][i]["code"] == "XSG":
+            xsg_usd_price = float(htmls[0][i]["price"])
+
+    if len(context.args) < 1:
+        message = f"{data['xsgusd']['default']}{round(xsg_usd_price, 3)}$._"
+        update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
+        return
+    cmd = context.args[0].lower()
+    if not is_number(cmd):
+        message = f"{data['xsgusd']['default']}{round(xsg_usd_price, 3)}$*."
+    elif cmd == "0":
+        message = f"{data['xsgusd']['zero']}"
+    elif is_number(cmd) and float(cmd) < 0:
+        message = f"{data['xsgusd']['neg']}"
+    elif is_number(cmd):
+        message = (
+            f"*{round(float(cmd),2):,} XSG* = *{round(float(xsg_usd_price)*float(cmd),2):,}$*\n"
+            + f"{data['xsgusd']['default']}{round(xsg_usd_price, 3)}$._"
+        )
     update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 

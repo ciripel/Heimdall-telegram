@@ -62,14 +62,9 @@
                 "zero": "Wow, You did it friend! You have reached the unmeasurable valor of zero masternodes!",
                 "neg": "Are you in debt my friend?! How have you arrived in this position in the crypto world?! How can you be in debt in a world without banks?! :thinking:"
               },
-
-  "cmc": {"cmc_btc": "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC",
-          "cmc_eth": "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=ETH",
-          "cmc_xsg": "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=XSG"
-        },
-  "xsgusd": {"default": "_The price of ***1 XSG*** is ***",
-             "zero": "Welcome young one! We have all started with **0 XSG** zilions of aeons ago!",
-             "neg": "Hmm! Yup! I feel sorry for you! You owe **XSG**... I feel your pain friend!"
+  "xsgusd": {"default": "_The price of 1 XSG is ",
+             "zero": "Welcome young one! We have all started with *0 XSG* zilions of aeons ago!",
+             "neg": "Hmm! Yup! I feel sorry for you! You owe *XSG*... I feel your pain friend!"
           },
   "no_role": "The guild do not have `Player` role. Please create it before using this command.",
   "whenmoon": ["Jan. 21 Wolf Moon U.S. East:12:16 a.m. UTC:04:16",
