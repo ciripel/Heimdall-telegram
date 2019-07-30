@@ -15,6 +15,8 @@ with open("links.json") as data_file:
     data = json.load(data_file)
 with open("params.json") as data_file:
     params = json.load(data_file)
+with open("market.json") as data_file:
+    markets = json.load(data_file)
 
 TOKEN = auth["token"]
 
@@ -328,7 +330,6 @@ def xsg_usd(update, context):
     for i in range(len(htmls[0])):
         if htmls[0][i]["code"] == "XSG":
             xsg_usd_price = float(htmls[0][i]["price"])
-
     if len(context.args) < 1:
         message = f"{data['xsgusd']['default']}{round(xsg_usd_price, 3)}$._"
         update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
@@ -349,8 +350,99 @@ def xsg_usd(update, context):
 
 
 def market_info(update, context):
-    message = "bul"
-    update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+    message_list = []
+    message_list.append("<b>SnowGem</b> is listed on the following exchanges:")
+    for i in range(len(markets)):
+        message_list.append(f"{i+1}. <a href=\"{markets[i]['link']}\">{markets[i]['source']}_{markets[i]['pair']}</a>")
+    message_list.append("<i>Use </i>!market info<i> for stats of the markets</i>")
+    if len(context.args) < 1 or context.args[0].lower() != "info":
+        message = "\n".join(message_list)
+    else:
+        vol_total = 0
+        url_list = [data["rates"]]
+        for i in range(len(markets)):
+            url_list.append(markets[i]["api"])
+        htmls = url_fetch(url_list)
+        for i in range(len(htmls)):
+            if htmls[i] is None:
+                message = f"There was an error with {url_list[i]} api."
+                update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
+                logger.warning(f"There was an error with {url_list[i]} api.")
+                return
+        for i in range(len(htmls[0])):
+            if htmls[0][i]["code"] == "XSG":
+                xsg_usd_price = float(htmls[0][i]["price"])
+            if htmls[0][i]["code"] == "BTC":
+                btc_usd_price = float(htmls[0][i]["price"])
+            if htmls[0][i]["code"] == "ETH":
+                eth_usd_price = float(htmls[0][i]["price"])
+        for a in range(len(markets)):
+            if markets[a]["link"] == "https://graviex.net/markets/xsgbtc":
+                markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1]["ticker"]["vol"])
+                usd_price = btc_usd_price * float(htmls[a + 1]["ticker"]["last"])
+                markets[a]["price"] = usd_price
+                vol_total = vol_total + float(markets[a]["volume_24h"])
+            elif markets[a]["link"] == "https://app.stex.com/en/trade/pair/BTC/XSG":
+                for i in range(len(htmls[a + 1])):
+                    if htmls[a + 1][i]["market_name"] == "XSG_BTC":
+                        markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1][i]["vol"])
+                        usd_price = btc_usd_price * float(htmls[a + 1][i]["last"])
+                        markets[a]["price"] = usd_price
+                vol_total = vol_total + float(markets[a]["volume_24h"])
+            elif markets[a]["link"] == "https://mercatox.com/exchange/XSG/BTC":
+                markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1]["pairs"]["XSG_BTC"]["baseVolume"])
+                usd_price = btc_usd_price * float(htmls[a + 1]["pairs"]["XSG_BTC"]["last"])
+                markets[a]["price"] = usd_price
+                vol_total = vol_total + float(markets[a]["volume_24h"])
+            elif markets[a]["link"] == "https://mercatox.com/exchange/XSG/ETH":
+                markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1]["pairs"]["XSG_ETH"]["baseVolume"])
+                usd_price = eth_usd_price * float(htmls[a + 1]["pairs"]["XSG_ETH"]["last"])
+                markets[a]["price"] = usd_price
+                vol_total = vol_total + float(markets[a]["volume_24h"])
+            elif markets[a]["link"] == "https://wallet.crypto-bridge.org/market/BRIDGE.XSG_BRIDGE.BTC":
+                for i in range(len(htmls[a + 1])):
+                    if htmls[a + 1][i]["id"] == "XSG_BTC":
+                        markets[a]["volume_24h"] = btc_usd_price * float(htmls[a + 1][i]["volume"])
+                        usd_price = btc_usd_price * float(htmls[a + 1][i]["last"])
+                        markets[a]["price"] = usd_price
+                vol_total = vol_total + float(markets[a]["volume_24h"])
+            elif markets[a]["link"] == "https://exchange.trade.io/trade/classic":
+                markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1]["volume"])
+                usd_price = btc_usd_price * float(htmls[a + 1]["close"])
+                markets[a]["price"] = usd_price
+                vol_total = vol_total + float(markets[a]["volume_24h"])
+        max_source = 0
+        for a in range(len(markets)):
+            markets[a]["vol_percent"] = float(markets[a]["volume_24h"]) / vol_total * 100
+            max_source = max(6, max_source, len(markets[a]["source"]))
+        markets.sort(key=lambda x: x["volume_24h"], reverse=True)
+        with open("market.json", "w") as file:
+            json.dump(markets, file, indent=2)
+        message = """
+<pre>
++-+------{a}+-------+----------+------+------+
+|#|Source{0}|Pair   | Vol (24h)| Price|Vol(%)|
++-+------{a}+-------+----------+------+------+
+{markets}
++-+------{a}+-------+----------+------+------+
+</pre>
+""".format(
+            " " * (max_source - 6),
+            a="-" * (max_source - 6),
+            markets="\n".join(
+                "|{:>1d}|{:<{max_source}}|{:<7}|{:>9.2f}$|{:>5.3f}$|{:>6.2f}|".format(
+                    i + 1,
+                    markets[i]["source"],
+                    markets[i]["pair"],
+                    markets[i]["volume_24h"],
+                    markets[i]["price"],
+                    markets[i]["vol_percent"],
+                    max_source=max_source,
+                )
+                for i in range(len(markets))
+            ),
+        )
+    update.message.reply_text(message, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 
 def error(update, context):
