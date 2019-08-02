@@ -414,33 +414,33 @@ def market_info(update, context):
         max_source = 0
         for a in range(len(markets)):
             markets[a]["vol_percent"] = float(markets[a]["volume_24h"]) / vol_total * 100
-            max_source = max(6, max_source, len(markets[a]["source"]))
+            max_source = max(6, max_source, len(markets[a]["source"] + "_" + markets[a]["pair"]))
         markets.sort(key=lambda x: x["volume_24h"], reverse=True)
         with open("market.json", "w") as file:
             json.dump(markets, file, indent=2)
         message = """
 <pre>
-+-+------{a}+-------+----------+------+------+
-|#|Source{0}|Pair   | Vol (24h)| Price|Vol(%)|
-+-+------{a}+-------+----------+------+------+
++------{a}+----------+
+|Source{0}| Vol (24h)|
++------{a}+----------+
 {markets}
-+-+------{a}+-------+----------+------+------+
++------{a}+----------+
+|Total {b}|{vol}|
++------{a}+----------+
 </pre>
 """.format(
             " " * (max_source - 6),
             a="-" * (max_source - 6),
+            b=" " * (max_source - 6),
             markets="\n".join(
-                "|{:>1d}|{:<{max_source}}|{:<7}|{:>9.2f}$|{:>5.3f}$|{:>6.2f}|".format(
-                    i + 1,
-                    markets[i]["source"],
-                    markets[i]["pair"],
+                "|{:<{max_source}}|{:>9.2f}$|".format(
+                    markets[i]["source"] + "_" + markets[i]["pair"],
                     markets[i]["volume_24h"],
-                    markets[i]["price"],
-                    markets[i]["vol_percent"],
                     max_source=max_source,
                 )
                 for i in range(len(markets))
             ),
+            vol="{:>9.2f}$".format(vol_total)
         )
     update.message.reply_text(message, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
