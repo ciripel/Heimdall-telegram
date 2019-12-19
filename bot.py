@@ -354,8 +354,8 @@ def market_info(update, context):
     message_list.append("<b>SnowGem</b> is listed on the following exchanges:")
     for i in range(len(markets)):
         message_list.append(f"{i+1}. <a href=\"{markets[i]['link']}\">{markets[i]['source']}_{markets[i]['pair']}</a>")
-    message_list.append("<i>Use </i>!market info<i> for stats of the markets</i>")
-    if len(context.args) < 1 or context.args[0].lower() != "info":
+    message_list.append("<i>Use </i>/market info<i> for stats of the markets</i>")
+    if len(context.args) < 1 or context.args[0].lower() != "none":
         message = "\n".join(message_list)
     else:
         vol_total = 0
@@ -397,18 +397,6 @@ def market_info(update, context):
             elif markets[a]["link"] == "https://mercatox.com/exchange/XSG/ETH":
                 markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1]["pairs"]["XSG_ETH"]["baseVolume"])
                 usd_price = eth_usd_price * float(htmls[a + 1]["pairs"]["XSG_ETH"]["last"])
-                markets[a]["price"] = usd_price
-                vol_total = vol_total + float(markets[a]["volume_24h"])
-            elif markets[a]["link"] == "https://wallet.crypto-bridge.org/market/BRIDGE.XSG_BRIDGE.BTC":
-                for i in range(len(htmls[a + 1])):
-                    if htmls[a + 1][i]["id"] == "XSG_BTC":
-                        markets[a]["volume_24h"] = btc_usd_price * float(htmls[a + 1][i]["volume"])
-                        usd_price = btc_usd_price * float(htmls[a + 1][i]["last"])
-                        markets[a]["price"] = usd_price
-                vol_total = vol_total + float(markets[a]["volume_24h"])
-            elif markets[a]["link"] == "https://exchange.trade.io/trade/classic":
-                markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1]["volume"])
-                usd_price = btc_usd_price * float(htmls[a + 1]["close"])
                 markets[a]["price"] = usd_price
                 vol_total = vol_total + float(markets[a]["volume_24h"])
         max_source = 0
