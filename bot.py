@@ -355,7 +355,7 @@ def market_info(update, context):
     for i in range(len(markets)):
         message_list.append(f"{i+1}. <a href=\"{markets[i]['link']}\">{markets[i]['source']}_{markets[i]['pair']}</a>")
     message_list.append("<i>Use </i>/market info<i> for stats of the markets</i>")
-    if len(context.args) < 1 or context.args[0].lower() != "none":
+    if len(context.args) < 1 or context.args[0].lower() != "info":
         message = "\n".join(message_list)
     else:
         vol_total = 0
