@@ -383,11 +383,9 @@ def market_info(update, context):
                 markets[a]["price"] = usd_price
                 vol_total = vol_total + float(markets[a]["volume_24h"])
             elif markets[a]["link"] == "https://app.stex.com/en/trade/pair/BTC/XSG":
-                for i in range(len(htmls[a + 1])):
-                    if htmls[a + 1][i]["market_name"] == "XSG_BTC":
-                        markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1][i]["vol"])
-                        usd_price = btc_usd_price * float(htmls[a + 1][i]["last"])
-                        markets[a]["price"] = usd_price
+                markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1]["data"]["volumeQuote"])
+                usd_price = btc_usd_price * float(htmls[a + 1]["data"]["last"])
+                markets[a]["price"] = usd_price
                 vol_total = vol_total + float(markets[a]["volume_24h"])
             elif markets[a]["link"] == "https://mercatox.com/exchange/XSG/BTC":
                 markets[a]["volume_24h"] = xsg_usd_price * float(htmls[a + 1]["pairs"]["XSG_BTC"]["baseVolume"])

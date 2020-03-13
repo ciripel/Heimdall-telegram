@@ -2,27 +2,27 @@
   {
     "source": "Stex",
     "pair": "BTC",
-    "volume_24h": 177718.1909949659,
-    "price": 0.0519440047,
-    "vol_percent": 88.99229685560272,
+    "volume_24h": 43157.72332355869,
+    "price": 0.012704271803283,
+    "vol_percent": 69.45112499845786,
     "link": "https://app.stex.com/en/trade/pair/BTC/XSG",
-    "api": "https://app.stex.com/api2/ticker"
+    "api": "https://api3.stex.com/public/ticker/250"
   },
   {
     "source": "Mercatox",
     "pair": "BTC",
-    "volume_24h": 21981.627960312024,
-    "price": 0.01160371948096,
-    "vol_percent": 11.007289404993529,
+    "volume_24h": 18900.612968059304,
+    "price": 0.0108262490149716,
+    "vol_percent": 30.415618172231255,
     "link": "https://mercatox.com/exchange/XSG/BTC",
     "api": "https://mercatox.com/public/json24"
   },
   {
     "source": "Graviex",
     "pair": "BTC",
-    "volume_24h": 0.8262402587280249,
-    "price": 0.01189935564608,
-    "vol_percent": 0.00041373940375556256,
+    "volume_24h": 82.80731767126187,
+    "price": 0.0114338446229547,
+    "vol_percent": 0.13325682931088398,
     "link": "https://graviex.net/markets/xsgbtc",
     "api": "https://graviex.net/api/v2/tickers/xsgbtc"
   },
@@ -30,7 +30,7 @@
     "source": "Mercatox",
     "pair": "ETH",
     "volume_24h": 0.0,
-    "price": 0.031108317415140002,
+    "price": 0.009090557684879999,
     "vol_percent": 0.0,
     "link": "https://mercatox.com/exchange/XSG/ETH",
     "api": "https://mercatox.com/public/json24"
