@@ -27,18 +27,15 @@
     "/market [info] - SnowGem exchanges [stats]"
   ],
   "links": [
-    "SnowGem <a href=\"https://snowgem.org/\">Website</a>",
+    "SnowGem <a href=\"https://tent.app/\">Website</a>",
     "SnowGem <a href=\"https://bitcointalk.org/index.php?topic=2630198\">Announcement</a>",
-    "SnowGem <a href=\"https://snowgem.org/whitepaper/SnowGem_Whitepaper.pdf\">Whitepaper</a>",
-    "SnowGem <a href=\"https://snowgem.org/blog\">Blog</a>",
-    "SnowGem Book: <a href=\"https://snowgem.org/files/snowgem_book.pdf\">Online</a> <a href=\"https://www.amazon.com/SnowGem-Seamless-Solutions-Concise-History-ebook/dp/B07NS7FLDC\">Amazon</a>",
-    "SnowGem <a href=\"https://forums.snowgem.org/\">Forums</a>",
-    "SnowGem <a href=\"https://github.com/SnowGem\">Github</a>",
-    "SnowGem: <a href=\"https://github.com/SnowGem/ModernWallet/releases\">Modern Wallet</a> <a href=\"https://wallet.snowgem.org/\">Web Wallet</a>",
-    "SnowGem: <a href=\"https://explorer.snowgem.org/\">Explorer1</a> <a href=\"https://explorer2.snowgem.org/\">Explorer2</a>",
+    "SnowGem <a href=\"https://discuss.snowgem.org/\">Forums</a>",
+    "SnowGem <a href=\"https://github.com/TENTOfficial\">Github</a>",
+    "SnowGem: <a href=\"https://github.com/TENTOfficial/TENT-Core/releases/latest\">TENT Core</a> <a href=\"https://play.google.com/store/apps/details?id=wallet.snowgem.bitfrost\">TENT Wallet (Google Play)</a> <a href=\"https://apps.apple.com/us/app/bitfrost/id1513205882\">TENT Wallet (App Store)</a>",
+    "SnowGem: <a href=\"https://explorer.tent.app/\">Explorer1</a>",
     "SnowGem <a href=\"https://asgard.snowgem.org/\">Asgard</a>",
-    "SnowGem <a href=\"https://github.com/snowgem/insight-api-snowgem\">Explorer API</a>",
-    "SnowGem Community: <a href=\"https://www.reddit.com/r/SnowGem/\">Reddit</a> <a href=\"https://t.me/snowgemofficial\">Telegram</a> <a href=\"https://www.facebook.com/snowgemofficial/\">Facebook</a> <a href=\"https://twitter.com/snowgemofficial\">Twitter</a> <a href=\"https://discord.gg/78rVJcH\">Discord</a>"
+    "SnowGem <a href=\"https://github.com/TENTOfficial/insight-api-tent\">Explorer API</a>",
+    "SnowGem Community: <a href=\"https://www.reddit.com/r/SnowGem/\">Reddit</a> <a href=\"https://twitter.com/tentpay\">Twitter</a> <a href=\"https://discord.gg/78rVJcH\">Discord</a>"
   ],
   "roadmap": "SnowGem <a href=\"https://snowgem.org/blog/snowgem-roadmap-2019\">Roadmap</a>",
   "por": "SnowGem <a href=\"https://www.proofofreview.com/wp-content/uploads/2019/02/SNOWGEM_v1.02.pdf\">Proof of Review</a>",
